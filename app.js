@@ -2,6 +2,7 @@ var express  = require('express');
 var app      = express();
 var port     = process.env.PORT || 80;
 var mongoose = require('mongoose');
+var path = require('path');
 var fs       = require('fs');
 var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
