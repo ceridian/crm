@@ -20,7 +20,7 @@ app.use(bodyParser.json()); // get information from html forms
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-require('./app/routes.js')(app);
+require('./routes.js')(app);
 
 app.listen(port);
 
