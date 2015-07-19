@@ -1,7 +1,7 @@
 var express  = require('express');
 var app      = express();
 var port     = process.env.PORT || 3000;
-var mongoose = require('mongoose');
+//var mongoose = require('mongoose');
 var path = require('path');
 var fs       = require('fs');
 var morgan       = require('morgan');
@@ -11,7 +11,7 @@ var session      = require('express-session');
 
 var configDB = require('./config/database.js');
 
-mongoose.connect(configDB.url); // connect to our database
+//mongoose.connect(configDB.url); // connect to our database
 
 // set up our express application
 app.use(morgan('dev')); // log every request to the console
