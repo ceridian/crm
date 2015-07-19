@@ -18,10 +18,26 @@ app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.json()); // get information from html forms
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(session({
+    secret: 'jfalajgiyiaog7a90g7a6gyaoyga7g0aygalyhga',
+    resave: false,
+    saveUninitialized: false
+}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 require('./routes.js')(app);
 
-app.listen(port);
+app.use(function(req, res, next){
+  res.redirect('/');
+});
 
-console.log('The magic happens on port ' + port);
+app.use(function(err, req, res, next) {
+  if(err){
+  	res.status(err.status || 500);
+  	res.send(err);
+  }else{
+    res.redirect('/');
+  }
+});
+
+module.exports = app;

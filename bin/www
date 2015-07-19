@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+var https = require('https');
+var http = require('http');
+var fs = require('fs');
+var debug = require('debug')('express-example');
+var app = require('../app');
+var models = require("../models");
+
+
+var options = {
+	key: fs.readFileSync('./server.key'),
+	cert: fs.readFileSync('./server.crt')
+};
+
+connections = {};
+
+models.sequelize.sync().complete(function(err) {
+	if(err){
+		console.log(err);
+	}else{
+		var server = https.createServer(options, app);
+		//var server = http.createServer(app);
+		io = require("socket.io").listen(server);
+		server.listen(443);
+		//server.listen(3000);
+		io.on('connection', function(socket){
+			console.log('connected io');
+
+		});
+		console.log('443');
+	}
+});
