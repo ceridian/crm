@@ -5,11 +5,11 @@ var app = angular.module('crm', ['ngRoute', 'controllers'])
 app.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      when('login', {
+      when('#login', {
         templateUrl: 'temps/login.html',
         controller: 'Login'
       }).
-      when('home', {
+      when('#home', {
         templateUrl: 'temps/home.html',
         controller: 'Home'
       }).
