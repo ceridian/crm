@@ -2,7 +2,7 @@
 
 var app = angular.module('crm', ['ngRoute'])
 
-App.config(['$routeProvider',
+app.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/login', {
