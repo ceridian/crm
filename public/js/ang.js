@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('crm', ['ngRoute'])
+var app = angular.module('crm', ['ngRoute', 'controllers'])
 
 app.config(['$routeProvider',
   function($routeProvider) {

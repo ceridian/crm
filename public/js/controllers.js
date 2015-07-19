@@ -2,14 +2,14 @@
 
 /* Controllers */
 
-var phonecatControllers = angular.module('phonecatControllers', []);
+var controllers = angular.module('controllers', []);
 
-phonecatControllers.controller('Login', ['$scope',
+controllers.controller('Login', ['$scope',
   function($scope) {
 
   }]);
 
-phonecatControllers.controller('Home', ['$scope', '$routeParams',
+controllers.controller('Home', ['$scope', '$routeParams',
   function($scope, $routeParams) {
-    
+
   }]);
